@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- transpile ES6 into ES5 due to spotty ES6 browser support  -->
+    <title>30 Days of React</title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+    <script type="text/babel">
+      // signals to Babel that we would like to handle
+      // the execution of the JS inside the script body
+      class App extends React.Component {
+        render() {
+          return <h1>Hello from our app</h1>
+        }
+      }
+      ReactDOM.render(app, mountComponent);
+    </script>
+
+  </body>
+</html>

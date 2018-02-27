@@ -1,0 +1,15 @@
+{
+  "name": "30-days-of-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/karabayse/30-days-of-react.git"
+  },
+  "author": "Kara Bayse",
+  "license": "ISC"
+}
