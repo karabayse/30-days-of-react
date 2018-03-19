@@ -55,48 +55,72 @@
         }
 
         class Content extends React.Component {
-  render() {
-    const {activities} = this.props; // ES6 destructuring
+          render() {
+            const {activities} = this.props; // ES6 destructuring
 
-    return (
-      <div className="content">
-        <div className="line"></div>
+            return (
+              <div className="content">
+              <div className="line"></div>
 
-        {/* Timeline item */}
-        {activities.map((activity) => (
-          <ActivityItem
-            activity={activity} />
-        ))}
+              {/* Timeline item */}
+              {activities.map((activity) => (
+                <ActivityItem
+                activity={activity} />
+              ))}
 
-      </div>
-    )
-  }
-}
+              </div>
+            )
+          }
+        }
 
-class ActivityItem extends React.Component {
-  render() {
-    const {activity} = this.props; // ES6 destructuring
+        class ActivityItem extends React.Component {
+          render() {
+            const {activity} = this.props; // ES6 destructuring
 
-    return (
-      <div className="item">
-        <div className="avatar">
-          <img
-            alt={activity.text}
-            src={activity.user.avatar} />
-          {activity.user.name}
-        </div>
+            return (
+              <div className="item">
+              <div className="avatar">
+              <img
+                alt={activity.text}
+                src={activity.user.avatar} />
+                {activity.user.name}
+              </div>
 
-        <span className="time">
-          {activity.timestamp}
-        </span>
-        <p>{activity.text}</p>
-        <div className="commentCount">
-          {activity.comments.length}
-        </div>
-      </div>
-    )
-  }
-}
+              <span className="time">
+                {activity.timestamp}
+              </span>
+              <p>{activity.text}</p>
+              <div className="commentCount">
+                {activity.comments.length}
+              </div>
+            </div>
+          )
+        }
+      }
+
+      class Clock extends React.Component {
+        render() {
+          const currentTime = new Date(),
+            hours = currentTime.getHours(),
+            minutes = currentTime.getMinutes(),
+            seconds = currentTime.getSeconds(),
+            ampm = hours >= 12 ? 'pm' : 'am';
+
+          return (
+            <div className="clock">
+              {
+                hours == 0 ? 12:
+                  (hours > 12) ?
+                    hours - 12 : hours
+              }:{
+                minutes > 9 ? minutes : '0${minutes}'
+              }:{
+                seconds > 9 ? seconds : '0${seconds}'
+              } {ampm}
+            </div>
+          )
+        }
+      }
 
   ReactDOM.render(app, mountComponent);
 
